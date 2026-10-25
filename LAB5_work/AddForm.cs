@@ -15,11 +15,12 @@ namespace LAB5_work
         public int ProductId { get { return (int)numId.Value; } }
         public int Quantity { get { return (int)numQuantity.Value; } }
 
+        //addForm constructor receives a boolean indicating whether the user wants to add a new product or add quantity to an existing product
         public AddForm(bool existingProduct)
         {
             InitializeComponent();
             this.existingProduct = existingProduct;
-
+            // check if product exists in the database if existingProduct is true, and adjust the form accordingly
             if (existingProduct)
             {
                 Text = "Add quantity to existing product";
@@ -39,6 +40,7 @@ namespace LAB5_work
             }
         }
 
+        //ok button click event handler, validates the input and creates a new Product object if necessary
         private void btnOK_Click(object sender, EventArgs e)
         {
             if (!existingProduct)

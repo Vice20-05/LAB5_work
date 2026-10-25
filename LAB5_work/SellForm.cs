@@ -28,6 +28,7 @@ namespace LAB5_work
             numSell.Value = 1;
         }
 
+        //ok button click sets the dialog result to OK, so Form1 can read the SoldQuantity property
         private void btnSell_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
